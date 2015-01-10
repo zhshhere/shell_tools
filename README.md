@@ -1,2 +1,2 @@
 # tools
-tools for develop
+tools for development
