@@ -26,6 +26,7 @@ block="server {
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_param APP_ENV 'development';
         fastcgi_index index.php;
         include fastcgi_params;
     }
