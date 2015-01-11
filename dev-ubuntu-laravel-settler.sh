@@ -142,12 +142,6 @@ sed -i "s/;listen\.mode.*/listen.mode = 0666/" /etc/php5/fpm/pool.d/www.conf
 service nginx restart
 service php5-fpm restart
 
-# Add www User To WWW-Data
-
-usermod -a -G www www
-id www
-groups www
-
 # Install Node
 
 apt-get install -y nodejs
