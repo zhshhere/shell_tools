@@ -43,7 +43,7 @@ useradd www -g www -m
 # Install PHP Stuffs
 
 apt-get install -y php5-cli php5-dev php-pear \
-php5-mysqlnd \
+php5-mysqlnd php5-mysql \
 php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug \
 php5-memcached php5-redis
