@@ -48,17 +48,6 @@ php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug \
 php5-memcached php5-redis
 
-# Make MCrypt Available
-
-ln -s /etc/php5/conf.d/mcrypt.ini /etc/php5/mods-available
-sudo php5enmod mcrypt
-
-# Install Mailparse PECL Extension
-
-pecl install mailparse
-echo "extension=mailparse.so" > /etc/php5/mods-available/mailparse.ini
-ln -s /etc/php5/mods-available/mailparse.ini /etc/php5/cli/conf.d/20-mailparse.ini
-
 # Install Composer
 
 curl -sS https://getcomposer.org/installer | php
