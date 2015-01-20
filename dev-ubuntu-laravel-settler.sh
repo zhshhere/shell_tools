@@ -150,7 +150,7 @@ apt-get install -y mysql-server-5.6
 
 # Install A Few Other Things
 
-apt-get install -y redis-server memcached beanstalkd
+apt-get install -y redis-server memcached beanstalkd mongodb
 
 # Configure Beanstalkd
 
