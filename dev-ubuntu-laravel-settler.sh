@@ -48,6 +48,10 @@ php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug \
 php5-memcached php5-redis
 
+pecl install mongo
+echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
+ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/20-mongo.ini
+
 # Install Composer
 
 curl -sS https://getcomposer.org/installer | php
