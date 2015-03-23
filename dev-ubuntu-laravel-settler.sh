@@ -87,6 +87,7 @@ service nginx restart
 # Setup Some PHP-FPM Options
 
 ln -s /etc/php5/mods-available/mailparse.ini /etc/php5/fpm/conf.d/20-mailparse.ini
+ln -s /etc/php5/mods-available/mongo.ini /etc/php5/fpm/conf.d/20-mongo.ini
 
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/fpm/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
