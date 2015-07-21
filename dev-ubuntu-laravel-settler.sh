@@ -52,6 +52,9 @@ pecl install mongo
 echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
 ln -s /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/20-mongo.ini
 
+echo "extension=mcrypt.so" > /etc/php5/mods-available/mcrypt.ini
+ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini
+
 # Install Composer
 
 curl -sS https://getcomposer.org/installer | php
@@ -88,6 +91,7 @@ service nginx restart
 
 ln -s /etc/php5/mods-available/mailparse.ini /etc/php5/fpm/conf.d/20-mailparse.ini
 ln -s /etc/php5/mods-available/mongo.ini /etc/php5/fpm/conf.d/20-mongo.ini
+ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/fpm/conf.d/20-mcrypt.ini
 
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/fpm/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
