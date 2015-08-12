@@ -23,7 +23,7 @@ apt-get update
 # Install Some Basic Packages
 
 apt-get install -y build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev \
-make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim git-flow git-core
+make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim git-flow git-core language-pack-zh*
 
 # Install A Few Helpful Python Packages
 
