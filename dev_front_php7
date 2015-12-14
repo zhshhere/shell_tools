@@ -20,7 +20,7 @@ apt-get update
 
 # Install Some Basic Packages
 
-apt-get install -y build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev \
+apt-get install -y curl dos2unix gcc git libmcrypt4 libpcre3-dev \
 make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim git-flow git-core language-pack-zh*
 
 apt-get install openssl libssl-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libcurl4-gnutls-dev
@@ -37,10 +37,10 @@ useradd www -g www -m
 # Install PHP Stuffs
 
 apt-get install -y php7.0-cli php7.0-dev php-pear \
-php7.0-mysqlnd \
-php7.0-apcu php7.0-json php7.0-curl php7.0-gd \
-php7.0-gmp php7.0-imap php7.0-mcrypt php7.0-xdebug \
-php7.0-memcached php7.0-redis php7.0-imagick
+php7.0-json php7.0-curl php7.0-gd \
+php7.0-imap php7.0-mcrypt \
+
+php7.0-mysqlnd php7.0-apcu php7.0-gmp php7.0-xdebug php7.0-memcached php7.0-redis php7.0-imagick
 
 pecl install mongo
 echo "extension=mongo.so" > /etc/php7/mods-available/mongo.ini
