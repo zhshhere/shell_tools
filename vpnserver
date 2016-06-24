@@ -114,7 +114,7 @@ server {
     resolver 8.8.8.8;
     location / {
         set \$upstream_host $host;
-    if (\$request_uri ~ "^/announce.*") {
+        if (\$request_uri ~ "^/announce.*") {
             return 403;
         }
         if (\$request_uri ~ "^.*torrent.*") {
