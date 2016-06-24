@@ -113,7 +113,7 @@ server {
     listen 0.0.0.0:3128;
     resolver 8.8.8.8;
     location / {
-        set \$upstream_host $host;
+        set \$upstream_host \$host;
         if (\$request_uri ~ "^/announce.*") {
             return 403;
         }
