@@ -113,11 +113,11 @@ server {
     listen 0.0.0.0:3128;
     resolver 8.8.8.8;
     location / {
-        set $upstream_host $host;
-    if ($request_uri ~ "^/announce.*") {
+        set \$upstream_host $host;
+    if (\$request_uri ~ "^/announce.*") {
             return 403;
         }
-        if ($request_uri ~ "^.*torrent.*") {
+        if (\$request_uri ~ "^.*torrent.*") {
             return 403;
         }
         proxy_set_header Host \$upstream_host;
