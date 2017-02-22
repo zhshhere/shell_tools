@@ -39,7 +39,14 @@ wondershaper eth1 10000 10000
 iptables -A INPUT -p tcp --syn --dport ${SHADOWSOCKS_PORT} -m connlimit --connlimit-above 32 -j REJECT --reject-with tcp-reset
 
 # Prevent ssh password cracking
-apt-get install denyhosts
+# apt-get install denyhosts
+cd /tmp/ && wget http://jaist.dl.sourceforge.net/project/denyhost/denyhost-2.10/denyhosts-2.10.tar.gz
+tar xzvf denyhosts-2.10.tar.gz
+cd denyhosts
+sudo python setup.py install
+sudo cp /usr/local/bin/daemon-control-dist /etc/init.d/denyhosts
+ln -s /usr/local/bin/denyhosts.py /usr/sbin/denyhosts
+sudo /etc/init.d/denyhosts restart
 
 # Block traffic to non-HTTP port
 iptables -t filter -m owner --uid-owner ssuser -A OUTPUT -p tcp --dport 80 -j ACCEPT
