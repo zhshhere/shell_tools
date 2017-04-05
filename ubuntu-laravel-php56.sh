@@ -35,11 +35,6 @@ pip install python-simple-hipchat
 
 ln -sf /usr/share/zoneinfo/PRC /etc/localtime
 
-# Useradd www and Groupadd www
-
-groupadd www
-useradd www -g www -m
-
 # Install PHP Stuffs
 
 apt-get install -y php5-cli php5-dev php-pear \
@@ -130,12 +125,7 @@ fastcgi_param	REDIRECT_STATUS		200;
 EOF
 
 # Set The Nginx & PHP-FPM User
-
-sed -i "s/user www-data;/user www;/" /etc/nginx/nginx.conf
 sed -i "s/# server_names_hash_bucket_size.*/server_names_hash_bucket_size 64;/" /etc/nginx/nginx.conf
-
-sed -i "s/user = www-data/user = www/" /etc/php5/fpm/pool.d/www.conf
-sed -i "s/group = www-data/group = www/" /etc/php5/fpm/pool.d/www.conf
 
 sed -i "s/;listen\.owner.*/listen.owner = www/" /etc/php5/fpm/pool.d/www.conf
 sed -i "s/;listen\.group.*/listen.group = www/" /etc/php5/fpm/pool.d/www.conf
