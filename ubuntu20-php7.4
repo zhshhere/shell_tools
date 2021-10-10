@@ -18,6 +18,12 @@ sudo apt install -y php7.4 php7.4-fpm php7.4-mysql php7.4-zip php7.4-curl php7.4
 
 sudo apt-get install -y php-redis php-ssh2
 
+# Remove Apache2
+sudo service apache2 stop
+sudo apt-get remove apache2*
+sudo apt-get autoremove
+sudo apt-get autoclean
+
 # Install Nginx
 sudo apt-get -y install nginx
 rm /etc/nginx/sites-enabled/default
